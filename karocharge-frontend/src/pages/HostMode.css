@@ -1,0 +1,259 @@
+/* --- CONTAINER & LAYOUT --- */
+.host-container {
+  min-height: 100vh;
+  background-color: #66bb6a; /* Theme Green */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.host-dashboard-wrapper {
+  display: flex;
+  gap: 20px;
+  width: 950px;
+  max-width: 95%;
+}
+
+.host-side-panel, .host-main-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* --- CARDS & PANELS --- */
+.host-form, .host-list-card, .session-card {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.host-form h2, .host-list-card h3, .session-card h3 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* --- FORM ELEMENTS --- */
+.host-form input, .input-group input {
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.host-form input:focus {
+  border-color: #f4c542;
+}
+
+.form-row { 
+  display: flex; 
+  gap: 10px; 
+}
+
+/* Date & Time Input Specifics */
+input[type="date"], input[type="time"] {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* --- BUTTONS --- */
+.host-btn, .verify-btn {
+  padding: 14px;
+  border: none;
+  background-color: #f4c542; /* Brand Gold */
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100%;
+  transition: 0.3s;
+  color: #333;
+}
+
+.host-btn:hover, .verify-btn:hover { 
+  background: #e5b93d; 
+}
+
+.start-btn {
+  background-color: #27ae60;
+  color: white;
+  font-weight: 800;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  animation: pulse 2s infinite;
+}
+
+/* Updated Button Group for Stop/Cancel */
+.button-group-row {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.stop-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  flex: 1; /* Makes buttons equal width */
+  transition: 0.3s;
+}
+
+.stop-btn:hover {
+  background-color: #c0392b;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  flex: 1; /* Makes buttons equal width */
+  transition: all 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* --- ERROR MESSAGE --- */
+.error-message {
+  background-color: #fff5f5;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* --- ASSET LIST (Mini List) --- */
+.mini-list { 
+  max-height: 200px; 
+  overflow-y: auto; 
+}
+
+.mini-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.status-tag {
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status-tag.available { background: #d4edda; color: #155724; }
+.status-tag.booked { background: #fff3cd; color: #856404; }
+
+/* --- SESSION CONTROL (Main Panel) --- */
+.session-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.live-view, .summary-view, .entry-view {
+  width: 100%;
+  text-align: center;
+}
+
+/* Timer Text */
+.timer-text { 
+  font-size: 4.5rem; 
+  margin: 10px 0; 
+  font-family: 'Courier New', Courier, monospace; 
+  color: #2c3e50; /* High Contrast */
+  font-weight: 900;
+  text-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.session-subtitle {
+  color: #95a5a6;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
+}
+
+.bolt-icon-host {
+  font-size: 3rem;
+  color: #f4c542;
+  animation: pulse 1.5s infinite;
+}
+
+.otp-number-display {
+  letter-spacing: 8px;
+  color: #27ae60;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: #f1f2f6;
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.otp-confirmed-text {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #27ae60;
+  margin-bottom: 5px;
+}
+
+/* --- SUMMARY BOX --- */
+.summary-box-host {
+  background: #f9fdf9;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 2px solid #66bb6a;
+}
+
+.summary-stats p { 
+  margin: 10px 0; 
+  font-size: 1.1rem; 
+  color: #333;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
